@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="js/E04_13_Overload.js"></script>
+    <script type="text/javascript">
+        var createVector = overload(
+	        function (a, b) {
+	            return { x: a, y: b };
+	        },
+	        function (length) {
+	            return { x: length / 1.414, y: length / 1.414 };
+	        }
+        );
+
+        var a = createVector(3, 4); 	// => { x: 3,  y: 4 }
+        var b = createVector(7.07); 	// => { x: 5,  y: 5 }
+
+        console.log('a.x == ' + a.x + ', a.y == ' + a.y);
+        console.log('b.x == ' + b.x + ', b.y == ' + b.y);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

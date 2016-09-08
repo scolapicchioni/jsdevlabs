@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        //What is the value of x in:
+        var x = [, , ].length;
+        console.log(x);
+        //What is the value of x in:
+        x = ++[[]][+[]] + [+[]];
+        
+        var a = []; //let a be an empty array
+        var b = +a; //when converted into a number, an empty array returns 0
+        console.log(b);
+        x = ++[[]][b] + [b]; // therefore the expression can be written as :
+        x = ++[[]][0] + [0];
+        
+        var c = [[]][0];
+        //let's examine the expression to the left of the + , which can be written as [[]][0]
+        // [[]] is an array with one element, which is in turn an array with 0 elements
+        // so the first element is the empty array
+        //which means that the expression can be rewritten as []
+        //the ++ operator converts the empty array into a number. it gets 0 which is then incremented to 1
+        //so in the end we have 
+        //1 + [0]
+
+        //now let's see what happens to the expression to the right of the + operator
+        //the + operator first invokes the valueOf of [0], which is of type object
+        console.log(typeof ([0]).valueOf());
+        //seen the fact the it is not a primitive, it invokes the toString(), which returns "0", a primitive
+        console.log(([0]).toString() + " => " + (typeof ([0]).toString()));
+
+        //so the + operator has now a number + a string, therefore it converts the number into a string and we get
+        //"1" + "0" which is "10"
+
+        console.log(x);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

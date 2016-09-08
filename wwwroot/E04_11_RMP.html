@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="js/E04_11_RMP.js"></script>
+    <title></title>
+    <script type="text/javascript">
+        function add(a, b) { return a + b; };
+        var obj = { x: 4, y: 7, sum: add };
+        var vector = { sum: add };
+        var bla = { sum: function (a, b) { return a + b } };
+        var a = reflection.functionName(vector.sum)	// => "add"
+        var b = reflection.functionName(bla.sum)	// => "undefined"
+        var c = reflection.hasProperty(obj, "x") 	// => true
+        var d = reflection.hasProperties(obj, "x", "sum", "y") // => true
+        var e = reflection.hasProperties(obj, "z", "sum", "y") // => false
+
+        console.log('reflection.functionName(vector.sum) => ' + a);
+        console.log('reflection.functionName(bla.sum) => ' + b);
+        console.log('reflection.hasProperty(obj, "x") => ' + c);
+        console.log('reflection.hasProperties(obj, "x", "sum", "y") => ' + d);
+        console.log('reflection.hasProperties(obj, "z", "sum", "y") => ' + e);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

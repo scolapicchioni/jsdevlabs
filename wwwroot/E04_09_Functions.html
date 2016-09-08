@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function test(a) {
+            return a + 5;
+        }
+        test.b = null;
+
+        console.log('test(3) => ' + test(3));
+        console.log('test("2") => ' + test("2"));
+        console.log('test(4, 2) => ' + test(4, 2));
+        console.log('test.a + 5 => ' + (test.a + 5));
+        console.log('test.b => ' + test.b);
+        console.log('test.c => ' + test.c);
+        console.log('test["b"]  + 7 => ' + (test["b"] + 7));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

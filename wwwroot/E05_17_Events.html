@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="js/E05_17_Events.js"></script>
+    <script type="text/javascript">
+        function accountant(sender, args) {
+            console.log(sender.toString());
+            console.log(args.bills);
+        }
+        var bob = new com.simona.CRM.Customer(102, "Bob", "Utrecht");
+        bob.unpaidBillsChanged.addListener(accountant);
+
+        bob.buyStuff();
+        // prints  "(102) Bob - Utrecht"  and  1  to console
+        bob.payBill();
+        // prints  "(102) Bob - Utrecht"  and  0  to console
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

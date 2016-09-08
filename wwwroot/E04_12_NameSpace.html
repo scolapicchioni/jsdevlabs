@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="js/E04_12_NameSpace.js"></script>
+    <script type="text/javascript">
+        function add(a, b) { return a + b; };
+        var obj = { x: 4, y: 7, sum: add };
+        var vector = { sum: add };
+        var bla = { sum: function (a, b) { return a + b } };
+        var a = com.simona.common.reflection.functionName(vector.sum)	// => "add"
+        var b = com.simona.common.reflection.functionName(bla.sum)	// => "undefined"
+        var c = com.simona.common.reflection.hasProperty(obj, "x") 	// => true
+        var d = com.simona.common.reflection.hasProperties(obj, "x", "sum", "y") // => true
+        var e = com.simona.common.reflection.hasProperties(obj, "z", "sum", "y") // => false
+
+        console.log('reflection.functionName(vector.sum) => ' + a);
+        console.log('reflection.functionName(bla.sum) => ' + b);
+        console.log('reflection.hasProperty(obj, "x") => ' + c);
+        console.log('reflection.hasProperties(obj, "x", "sum", "y") => ' + d);
+        console.log('reflection.hasProperties(obj, "z", "sum", "y") => ' + e);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

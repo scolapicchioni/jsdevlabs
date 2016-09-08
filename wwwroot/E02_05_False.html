@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        //+!x === 1
+        var x = "";
+        console.log('+!"" === 1 => ' + (+!x === 1));
+        x = 0;
+        console.log('+!0 === 1 => ' + (+!x === 1));
+        x = false;
+        console.log('+!false === 1 => ' + (+!x === 1));
+        x = null;
+        console.log('+!null === 1 => ' + (+!x === 1));
+        x = undefined;
+        console.log('+!undefined === 1 => ' + (+!x === 1));
+        x = -0;
+        console.log('+!-0 === 1 => ' + (+!x === 1));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function test(a) {
+            return a + 5;
+        }
+        test.b = null;
+
+        console.log(typeof test);
+        console.log(typeof test.prototype);
+        console.log(test.toString());
+        console.log("b" in new test());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
