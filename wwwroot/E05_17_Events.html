@@ -20,6 +20,51 @@
     </script>
 </head>
 <body>
+<h1>17. Event Class</h1>
+Write a helper class (in the namespace com.yourCompany.common) that implements an event mechanism.
+<ol>
+<li>Write a class EventHandler, that has a private array
+<code>
+    listeners
+</code>
+and public methods
+<code>
+    addListener(listener)
+    //adds the listener to the array of listeners,  if the listener is a function
+    //fails silently, otherwise
 
+    removeListener(listener)
+    //removes the first occurrence of the listener in the array of listeners, if the listeners array contains this listener (same object reference)
+    //fails silently, otherwise
+
+    invoke(sender, args)
+    //iterates through the array of listener functions and invoke all functions by passing them the sender and args objects.
+</code>
+</li>
+<li>
+Change the Customer class.<br>
+Add a property
+<code>
+	unpaidBillsChanged
+</code>
+and assign it a new EventHandler object in the Customer constructor.
+</li>
+<li>Invoke the unpaidBillsChanged event handler each time the nrOfUnpaidBills changes value, passing the customer object and an object literal with a bills property that contains the new number of unpaid bills.</li>
+<li>Write the following code and see that information is printed in the console:</li>
+</ol>
+
+<code>
+    function accountant(sender, args) {
+        console.log(sender.toString());
+        console.log(args.bills);
+    }
+    var bob = new Customer(102, "Bob", "Utrecht");
+    bob.unpaidBillsChanged.addListener(accountant);
+
+    bob.buyStuff();	
+    // prints  "(102) Bob - Utrecht"  and  1  to console
+    bob.payBill();
+    // prints  "(102) Bob - Utrecht"  and  0  to console
+</code>
 </body>
 </html>

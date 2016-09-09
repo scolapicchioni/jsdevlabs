@@ -9,8 +9,9 @@ function comNS(nsString) {
     if (nsString) {
         var parts = nsString.split('.');
         for (var i = 0; i < parts.length; i++) {
-            obj[parts[i]] = obj[parts[i]] || {};
-            obj = obj[parts[i]];
+            var prop = parts[i];
+            obj[prop] = obj[prop] || {};
+            obj = obj[prop];
         }    
     } 
     return obj;

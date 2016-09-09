@@ -10,6 +10,43 @@
     </script>
 </head>
 <body>
-    
+<h1>18. Puzzle  (if time permits)</h1>
+For long namespaces, the namespace pattern can get a bit out of control.
+<code>
+
+var com;
+
+(function(ns, undefined) {
+
+    //...
+
+}((com = com || {},
+   com.infoSupport = com.infoSupport || {},
+   com.infoSupport.someProject = com.infoSupport.someProject || {},
+   com.infoSupport.someProject.v1 = com.infoSupport.someProject.v1 || {},
+   com.infoSupport.someProject.v1.model = com.infoSupport.someProject.v1. model || {} )));
+
+</code>
+
+Let’s try to make this somewhat less cumbersome.<br>
+It would be more convenient to write:
+
+<code>
+
+!function(ns, undefined) {
+
+    //...
+
+}(comNS("com.infoSupport.someProject.v1.model"));
+
+</code>
+
+Try to implement this solution.
+<ol>
+    <li>Add a file comNS.js</li>
+    <li>Free programmers from the need to declare  var com;  each time</li>
+    <li>Define this comNS function</li>
+<ol>
+
 </body>
 </html>

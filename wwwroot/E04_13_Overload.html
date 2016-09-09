@@ -22,6 +22,33 @@
     </script>
 </head>
 <body>
+<h1>13. Puzzle  (if time permits)</h1>
+Make a function
+<code>
+	overload(function_with_n_parameters, function_with_m_parameters)
+</code>
+that: 
+<ol>
+<li>throws a TypeError,  if both function have the same number of parameters,</li>
+<li>and otherwise, returns an function that</li>
+<li>when called with n parameters, forwards the call to function_with_n_parameters,</li>
+<li>when called with m parameters, forwards the call to function_with_m_parameters,</li>
+<li>when called otherwise, throws a TypeError</li>
+<li>(hint: every function has a length property that returns the number of formal paramters in the definition of that function)</li>
+</ol>
+<code>
 
+var createVector = overload(
+	function (a, b) { 
+		return { x: a,  y: b }; 
+	},
+	function (length) { 
+		return { x: length / 1.414,  y: length / 1.414 }; 
+	}
+);
+
+createVector(3, 4) 	// => { x: 3,  y: 4 }
+createVector(7.07) 	// => { x: 5,  y: 5 }
+</code>
 </body>
 </html>

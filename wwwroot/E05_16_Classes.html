@@ -25,6 +25,36 @@
     </script>
 </head>
 <body>
+<h1>16. Classes</h1>
+Write a Customer class in the namespace com.yourCompany.CRM. 
+<ol>
+    <li>Write a class Customer that has the following properties: 
+<code>
+id, name, city, nrOfUnpaidBills 
+</code>
+and the methods:
+<code>
+buyStuff(), payBill()
+</code>
+and the constructor
+<code>
+Customer(id, name, city)
+</code>
 
+when a Customer is created, the nrOfUnpaidBills equals 0. Each time buyStuff() is called, the nrOfUnpaidBills is increased by 1, and each time payBill() is called, the nrOfUnpaidBills is decreased by 1.
+</li>
+<li>Make the property nrOfUnpaidBills private (not accessible outside the Customer object), and add a method
+<code>
+badPayer(int n)
+</code>
+that returns true,   if the nrOfUnpaidBills is n or more
+and returns false,  otherwise.
+</li>
+<li>Override the toString() method for Customer objects. It should return id, name, and city, formatted like:
+<code>
+"(id) name - city"
+</code>
+</li>
+</ol>
 </body>
 </html>
